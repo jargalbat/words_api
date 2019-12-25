@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:words_api/api.dart';
+import 'package:words_api/csv_helper.dart';
 import 'package:words_api/word_response.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -18,12 +19,8 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   _do() async{
-    OxfordResponse oxfordResponse = await fetchPost(wordID: 'Ace');
-    _writeCSV(oxfordResponse);
-  }
-
-  _writeCSV(OxfordResponse oxfordResponse){
-
+    OxfordResponse oxfordResponse = await fetchPost(wordID: 'Warehouse');
+    writeCSV(oxfordResponse);
   }
 
   @override
